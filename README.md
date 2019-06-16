@@ -48,3 +48,27 @@ docker-compose exec php /bin/ash
 ```
 
 exec command "php" is service name set in docker-compose.yaml.
+
+## Xdebug + VSCode configuration
+
+This repo have specified xdebug remote_port 9012 in php.ini. So the configuration of VSCode's launch.json is below
+
+### Example
+
+```json
+// launch.json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Listen for XDebug",
+      "type": "php",
+      "request": "launch",
+      "port": 9012,
+      "pathMappings": {
+        "/var/www/html": "${workspaceFolder}/php"
+      }
+    }
+  ]
+}
+```
