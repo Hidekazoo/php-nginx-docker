@@ -72,3 +72,28 @@ This repo have specified xdebug remote_port 9012 in php.ini. So the configuratio
   ]
 }
 ```
+
+## Using Postgres
+
+Add the database settings to docker-compose.yaml. An example is the following. Port 5439 is an arbitary number, and is used when connecting from outside docker(such as pgAdmin).
+
+```yaml
+db:
+  image: postgres:11-alpine
+  ports:
+    - 5439:5432
+  restart: always
+  environment:
+    POSTGRES_USER: admin
+    POSTGRES_PASSWORD: admin
+```
+
+Example of connecting to database with PHP
+
+```php
+$db = new PDO(
+  'pgsql:host=db;dbname=admin;',
+  'admin',
+  'admin'
+);
+```
