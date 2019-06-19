@@ -3,7 +3,7 @@ services:
   nginx:
     image: nginx:1.15.7-alpine
     ports:
-      - 4200:80
+      - 3900:80
     volumes:
       - ./nginx/site.conf:/etc/nginx/conf.d/default.conf
       - ./php:/var/www/html
