@@ -5,7 +5,7 @@ php development environment using docker
 ## Overview
 
 - nginx: 1.15.7
-- php: 7.3
+- php: 7.3.6
 - xdebug
 - composer
 
@@ -38,7 +38,7 @@ docker-compose down
 
 ### PHP
 
-You can develop in php folder. If you want to run arbitrary commands in php environment, do the following
+You can develop under html folder. If you want to run arbitrary commands in php environment, do the following
 
 ```
 docker-compose up -d
